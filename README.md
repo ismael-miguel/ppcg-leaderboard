@@ -16,7 +16,7 @@ Under normal circumstances, the question will be automatically detected, using t
 
 ## Any other considerations?
 
-StackExchange API had a limit of 10000 requests per day, and a limit of data per hours.
+StackExchange API has an hard limit of 10000 requests per day, and a limit of data per hour. I'm not sure of how much data per hour it is.
 
 Everytime you execute the leaderboard, **1 request** is spent to fetch all comments and answers.
 
