@@ -12,6 +12,13 @@ Simply copy the file and paste it on a [Stack Snippet](https://blog.stackoverflo
 
 If you have problems, you can uncomment the [line 5 on the file](https://github.com/ismael-miguel/ppcg-leaderboard/blob/master/leaderboard.js#L5) and replace the number with your question id.
 
+Under normal circumstances, the question will be automatically detected, using the `document.referrer` property. Some browser may not work well with it, due to security concerns.
+
+## Any other considerations?
+
+StackExchange API had a limit of 10000 requests per day, and a limit of data per hours.
+
+Everytime you execute the leaderboard, **1 request** is spent to fetch all comments and answers.
 
 ## Where can I see it in action?
 
