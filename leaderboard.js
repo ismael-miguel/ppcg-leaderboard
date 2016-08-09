@@ -4,7 +4,7 @@
 		.replace(/^https?\:\/\/codegolf\.stackexchange\.com\/questions\/(\d*)\/.*$/i, '$1')
 		// || 85;
 	var FILTER = '!.DAGnbqUZ3-BwQZ.3SBHfRQvj8_rVo9IrLyyaHtB*Z_Ducovyoc)5b96DKbT_MhZ2LU25-O(SDu';
-	var HEURISTIC_INVALID_MARK = true;
+	var HEURISTIC_INVALID_MARK = true; //might work
 
 	var answers = [];
 	var question = {
@@ -185,46 +185,13 @@
 				}
 				else
 				{
-					var $header = $div.html(answer.body).first();
-					$header.find(':not(a)').remove();
-					$header.find('a').attr('target', '_blank');
-					var size = $header.contents()
-						.filter(function(){
-							return this.nodeType === 3;
-						})
-						.last()
-						.text()
-						.replace(/.*?(\d+)\D+$/, '$1');
-					
-					if(size && size.length)
-					{
-						console.log($header.contents());
-						var $lang = $header.contents()
-									.first();
-						
-						var lang = $lang[0].nodeType === 3
-									? $lang[0].nodeValue.replace(/(?:\b|\s*[\(\[\-\,]\s*)(\d+)\D+$/, '')
-									: $lang.html().replace(/(?:\b|\s*[\(\[\-\,]\s*)(\d+)\D+$/, '');
-						answer._meta = {
-							valid: true,
-							lang: lang,
-							lang_text: $span.html(lang).text().toLowerCase(),
-							size: size,
-							competing: true
-						};
-						
-					}
-					else
-					{
-						answer._meta = {
-							valid: false,
-							lang: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>',
-							lang_text: '',
-							size: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>',
-							competing: false
-						};
-					}
-					
+					answer._meta = {
+						valid: false,
+						lang: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>',
+						lang_text: '',
+						size: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>',
+						competing: false
+					};
 				}
 				
 				return answer;
