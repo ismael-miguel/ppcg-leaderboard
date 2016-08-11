@@ -108,7 +108,7 @@
 							throw new Error('The current question doesn\'t have a suitable tag for scoring. Supported tags: ' + Object.keys(tags).join(', ') + '. Current tags: ' + question.tags.join(', '));
 						}
 						
-						$.get(ROOT + '/tags/' + tag[tag.length - 1] + '.js', function(code){
+						$.get(ROOT + '/tags/' + tag[tag.length - 1] + '.js?_=' + Math.random(), function(code){
 							Function('HEURISTIC_INVALID_MARK', 'analizeHeuristicValidity', 'question', 'answers', '$table', '"use strict";' + code)(HEURISTIC_INVALID_MARK, analizeHeuristicValidity, question, answers, $table);
 						}).fail(function(){
 							console.error('An error ocurred when trying to fetch the file to calculate the ');
