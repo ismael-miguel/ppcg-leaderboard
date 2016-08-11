@@ -224,4 +224,4 @@ var handleData = function(data){
 	setTimeout(renderAnswers, 10);
 };
 
-handleData(answers);
+//handleData(answers);
