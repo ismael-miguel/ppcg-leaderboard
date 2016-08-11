@@ -1,3 +1,4 @@
+console.log(answers);
 var filter_data = {
 	all: {},
 	valid: {
@@ -149,7 +150,7 @@ var handleData = function(data){
 	var $span = $('<span>');
 	var $div = $('<div>');
 	
-	data.map(function(answer){
+	/*data.map(function(answer){
 		var meta = answer.body.match(/<h\d>\s*([^\n,]*[^\s,]),.*?(\d+)(?=[^\n\d<>]*(?:<(?:s>[^\n<>]*<\/s>|[^\n<>]+>)[^\n\d<>]*)*<\/h\d>)/);
 		
 		if(meta)
@@ -219,7 +220,7 @@ var handleData = function(data){
 			filter_data.per_lang[answer._meta.lang_text] = answer.answer_id;
 		}
 	});
-	console.log('Handling end: ' + performance.now());
+	*/console.log('Handling end: ' + performance.now());
 	
 	//setTimeout(renderAnswers, 10);
 };
