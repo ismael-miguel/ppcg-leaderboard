@@ -1,4 +1,3 @@
-console.log(answers);
 var filter_data = {
 	all: {},
 	valid: {
@@ -142,7 +141,6 @@ var renderAnswers = function(){
 
 var handleData = function(data){
 	console.log('Handling began: ' + performance.now(), data);
-	return;
 	if(!data.length)
 	{
 		return;
@@ -150,7 +148,7 @@ var handleData = function(data){
 	var $span = $('<span>');
 	var $div = $('<div>');
 	
-	/*data.map(function(answer){
+	var _X = data.map(function(answer){
 		var meta = answer.body.match(/<h\d>\s*([^\n,]*[^\s,]),.*?(\d+)(?=[^\n\d<>]*(?:<(?:s>[^\n<>]*<\/s>|[^\n<>]+>)[^\n\d<>]*)*<\/h\d>)/);
 		
 		if(meta)
@@ -179,7 +177,9 @@ var handleData = function(data){
 		
 		return answer;
 	})
-	.forEach(function(answer){
+	
+	console.log(_X);
+	/*.forEach(function(answer){
 		
 		filter_data.all[answer.answer_id] = answers[answers.length] = answer;
 		
