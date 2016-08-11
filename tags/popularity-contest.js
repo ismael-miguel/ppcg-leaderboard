@@ -29,7 +29,7 @@ var renderAnswers = function(){
 				{
 					return b.score - a.score;
 				}
-				return a.creation_date - b.creation_date;
+				return b.creation_date - a.creation_date;
 			})
 			.map(function(answer, index){
 				
