@@ -4,8 +4,7 @@
 		|| +(window.document.referrer + '').replace(/^https?\:\/\/codegolf\.stackexchange\.com\/questions\/(\d*)\/.*$/i, '$1');
 	var FILTER = '!.DAGnbqUZ3-BwQZ*J9lkg4gEetKV*IP7TRQ864RKL_bUg8tZmbZCjUKqJLCd.c98CvmlY6ycgHu';
 	var HEURISTIC_INVALID_MARK = 'HEURISTIC_INVALID_MARK' in window ? window.HEURISTIC_INVALID_MARK : true; //might work
-	// need a real host for this
-	var ROOT = 'https://raw.githubusercontent.com/ismael-miguel/ppcg-leaderboard/master';
+	var ROOT = 'https://cdn.rawgit.com/ismael-miguel/ppcg-leaderboard/master';
 
 	var answers = [];
 	var question = {
@@ -108,10 +107,10 @@
 							throw new Error('The current question doesn\'t have a suitable tag for scoring. Supported tags: ' + Object.keys(tags).join(', ') + '. Current tags: ' + question.tags.join(', '));
 						}
 						
-						$.get(ROOT + '/tags/' + tag[tag.length - 1] + '.js?_=' + Math.random(), function(code){
+						$.get(ROOT + '/tags/' + tag[tag.length - 1] + '.js',function(code){
 							Function('HEURISTIC_INVALID_MARK', 'analizeHeuristicValidity', 'question', 'answers', '$table', '"use strict";' + code)(HEURISTIC_INVALID_MARK, analizeHeuristicValidity, question, answers, $table);
-						}).fail(function(){
-							console.error('An error ocurred when trying to fetch the file to calculate the leaderboard');
+						}, 'text').fail(function(e){
+							console.error('An error ocurred when trying to fetch the file to calculate the leaderboard', e);
 						});
 					}
 				}
