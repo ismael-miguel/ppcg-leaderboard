@@ -18,7 +18,6 @@ var filter_data = {
 };
 
 var renderAnswers = function(){
-	console.log('Rendering began: ' + performance.now(), answers);
 	
 	var last_size = 0;
 	var classification = 1;
@@ -140,13 +139,13 @@ var renderAnswers = function(){
 }
 
 var handleData = function(data){
-	console.log('Handling began: ' + performance.now(), data);
 	if(!data.length)
 	{
 		return;
 	}
 	var $span = $('<span>');
 	var $div = $('<div>');
+	var answers = [];
 	
 	var _X = data.map(function(answer){
 		var meta = answer.body.match(/<h\d>\s*([^\n,]*[^\s,]),.*?(\d+)(?=[^\n\d<>]*(?:<(?:s>[^\n<>]*<\/s>|[^\n<>]+>)[^\n\d<>]*)*<\/h\d>)/);
@@ -177,9 +176,7 @@ var handleData = function(data){
 		
 		return answer;
 	})
-	
-	console.log(_X);
-	/*.forEach(function(answer){
+	.forEach(function(answer){
 		
 		filter_data.all[answer.answer_id] = answers[answers.length] = answer;
 		
@@ -220,9 +217,10 @@ var handleData = function(data){
 			filter_data.per_lang[answer._meta.lang_text] = answer.answer_id;
 		}
 	});
-	*/console.log('Handling end: ' + performance.now());
 	
-	//setTimeout(renderAnswers, 10);
+	setTimeout((function(){
+		renderAnswers(this);
+	}).bind(answers), 10);
 };
 
 handleData(answers);
