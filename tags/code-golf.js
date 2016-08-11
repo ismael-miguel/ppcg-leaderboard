@@ -1,3 +1,4 @@
+console.log(answers);
 var filter_data = {
 	all: {},
 	valid: {
