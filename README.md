@@ -8,7 +8,7 @@ All the dependencies are already included in the file and everything is ready to
 
 ## How to make it work?
 
-Simply copy and paste the following on a [Stack Snippet](https://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/), inside **any** question on the website (with the tag "codegolf"), in the `script` section:
+Simply copy and paste the following on a [Stack Snippet](https://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/), inside **any** question on the website, in the `script` section:
 
 	<!--<script>QUESTION_ID = 0;</script>-->
 	<script src="https://cdn.rawgit.com/ismael-miguel/ppcg-leaderboard/master/leaderboard.js"></script>
