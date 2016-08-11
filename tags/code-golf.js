@@ -135,7 +135,6 @@ var renderAnswers = function(){
 		
 		return filter_data[filter].fn(answer_id);
 	});
-	console.log('Rendering end: ' + performance.now());
 }
 
 var handleData = function(data){
