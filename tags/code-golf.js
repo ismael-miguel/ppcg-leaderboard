@@ -1,4 +1,3 @@
-console.log(answers);
 var filter_data = {
 	all: {},
 	valid: {
@@ -142,6 +141,7 @@ var renderAnswers = function(){
 
 var handleData = function(data){
 	console.log('Handling began: ' + performance.now(), data);
+	return;
 	if(!data.length)
 	{
 		return;
