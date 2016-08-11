@@ -8,7 +8,7 @@ var renderAnswers = function(){
 		'<tr>' +
 			'<th><i class="fa fa-hashtag" aria-hidden="true"></i></th>' +
 			'<th>Author</th>' +
-			'<th>Language</th>' +
+			'<th>Bot</th>' +
 			'<th>Votes</th>' +
 			'<th>&nbsp;</th>' +
 		'</tr>' +
