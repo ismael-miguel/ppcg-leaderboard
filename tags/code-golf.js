@@ -19,7 +19,7 @@ var filter_data = {
 };
 
 var renderAnswers = function(){
-	console.log('Rendering began: ' + performance.now());
+	console.log('Rendering began: ' + performance.now(), answers);
 	
 	var last_size = 0;
 	var classification = 1;
@@ -221,7 +221,7 @@ var handleData = function(data){
 	});
 	console.log('Handling end: ' + performance.now());
 	
-	setTimeout(renderAnswers, 10);
+	//setTimeout(renderAnswers, 10);
 };
 
-//handleData(answers);
+handleData(answers);
