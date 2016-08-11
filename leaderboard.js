@@ -2,8 +2,8 @@
 	'use strict';
 	var QUESTION_ID = +(window.document.referrer + '')
 		.replace(/^https?\:\/\/codegolf\.stackexchange\.com\/questions\/(\d*)\/.*$/i, '$1')
-		// || 85;
-	var FILTER = '!.DAGnbqUZ3-BwQZ.3SBHfRQvj8_rVo9IrLyyaHtB*Z_Ducovyoc)5b96DKbT_MhZ2LU25-O(SDu';
+		|| 85;
+	var FILTER = '!.DAGnbqUZ3-BwQZ*J9lkg4gEetKV*IP7TRQ864RKL_bUg8tZmbZCjUKqJLCd.c98CvmlY6ycgHu';
 	var HEURISTIC_INVALID_MARK = true; //might work
 
 	var answers = [];
@@ -13,7 +13,8 @@
 		answer_count: undefined,
 		question_id: undefined,
 		link: undefined,
-		title: undefined
+		title: undefined,
+		tags: undefined
     };
 	var filter_data = {
 		all: {},
@@ -223,7 +224,7 @@
 							last_comment_date = comment.creation_date;
 						}
 						
-						if(/\b((?:in|isn't |not )valid|wrong(?: answer| (?:in|out)put| result)|spam|broken|incorrect|(?:does(?:n'?t| not) |won'?t |will not )work)(?!\b(?:to|at|as|in))\b/i.test(comment.body))
+						if(/\b((?:in|isn't |not )valid|wrong(?: answer| (?:in|out)put| result)|spam|broken|incorrect|(?:does(?:n'?t| not) (?:seems? to )?|won'?t |will not )work)(?!\b(?:to|at|as|in))\b/i.test(comment.body))
 						{
 							score -= comment.score * +(comment.owner.user_id != question.owner.user_id);
 							return true;
