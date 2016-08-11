@@ -12,7 +12,7 @@ Simply copy the file and paste the following on a [Stack Snippet](https://blog.s
 
 	//QUESTION_ID = 0;
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'https://raw.githubusercontent.com/ismael-miguel/ppcg-leaderboard/master/leaderboard.js', true);
+	xhr.open('GET', 'https://raw.githubusercontent.com/ismael-miguel/ppcg-leaderboard/master/leaderboard.js?_=' + Math.random(), true);
 	xhr.onreadystatechange = function () {
 		if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 			eval(xhr.responseText);
