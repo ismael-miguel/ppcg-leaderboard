@@ -111,7 +111,7 @@
 						$.get(ROOT + '/tags/' + tag[tag.length - 1] + '.js?_=' + Math.random(), function(code){
 							Function('HEURISTIC_INVALID_MARK', 'analizeHeuristicValidity', 'question', 'answers', '$table', '"use strict";' + code)(HEURISTIC_INVALID_MARK, analizeHeuristicValidity, question, answers, $table);
 						}).fail(function(){
-							console.error('An error ocurred when trying to fetch the file to calculate the ');
+							console.error('An error ocurred when trying to fetch the file to calculate the leaderboard');
 						});
 					}
 				}
