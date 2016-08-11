@@ -27,7 +27,7 @@ var renderAnswers = function(){
 			.sort(function(a, b){
 				if(a.score != b.score)
 				{
-					return a.score - b.score;
+					return b.score - a.score;
 				}
 				return a.creation_date - b.creation_date;
 			})
