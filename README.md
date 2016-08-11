@@ -22,7 +22,7 @@ Everytime you execute the leaderboard, **1 request** is spent to fetch all comme
 
 ## Where can I see it in action?
 
-You can visit https://jsfiddle.net/akc5f15a/13/ to check how it works and what it can do.
+You can visit https://jsfiddle.net/akc5f15a/14/ to check how it works and what it can do.
 
 ----------
 
