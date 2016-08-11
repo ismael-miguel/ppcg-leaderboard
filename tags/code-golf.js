@@ -18,6 +18,7 @@ var filter_data = {
 };
 
 var renderAnswers = function(){
+	console.log('Rendering began: ' + performance.now());
 	
 	var last_size = 0;
 	var classification = 1;
@@ -135,9 +136,11 @@ var renderAnswers = function(){
 		
 		return filter_data[filter].fn(answer_id);
 	});
+	console.log('Rendering end: ' + performance.now());
 }
 
 var handleData = function(data){
+	console.log('Handling began: ' + performance.now());
 	if(!data.length)
 	{
 		return;
@@ -215,6 +218,7 @@ var handleData = function(data){
 			filter_data.per_lang[answer._meta.lang_text] = answer.answer_id;
 		}
 	});
+	console.log('Handling end: ' + performance.now());
 	
 	setTimeout(renderAnswers, 10);
 };
