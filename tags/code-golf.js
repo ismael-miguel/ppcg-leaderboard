@@ -140,7 +140,7 @@ var renderAnswers = function(){
 }
 
 var handleData = function(data){
-	console.log('Handling began: ' + performance.now());
+	console.log('Handling began: ' + performance.now(), data);
 	if(!data.length)
 	{
 		return;
