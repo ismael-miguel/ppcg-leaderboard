@@ -112,11 +112,12 @@ var handleData = function(data){
 		return;
 	}
 	var $span = $('<span>');
-	var $div = $('<div>');
 	var answers = [];
 	
 	data.map(function(answer){
-		var $h1 = $span.html(answer.body).find(':first-child').get(0);
+		$span.html(answer.body);
+		var $h1 = $span.find(':first-child').get(0);
+			console.log($h1);
 			$h1.find('a').attr('target', '_blank');
 			
 		answer._meta = {
