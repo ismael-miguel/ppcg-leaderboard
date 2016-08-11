@@ -116,8 +116,7 @@ var handleData = function(data){
 	
 	data.map(function(answer){
 		$span.html(answer.body);
-		var $h1 = $span.find(':first-child').get(0);
-			console.log($h1);
+		var $h1 = $span.find(':first-child').eq(0);
 			$h1.find('a').attr('target', '_blank');
 			
 		answer._meta = {
