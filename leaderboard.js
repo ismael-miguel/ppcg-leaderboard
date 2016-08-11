@@ -19,17 +19,16 @@
 	};
 	
 	var tags = {
+		'popularity-contest': 'popularity-contest',
 		'code-golf': 'code-golf',
 		'metagolf': 'code-golf',
-		'king-of-the-hill': 'king-of-the-hill',
+		'king-of-the-hill': 'king-of-the-hill'/*,
 		'fastest-code': 'fastest-code',
 		'cops-and-robers': {
 			toString: function(){
 				return 'cops-and-robers/' + (/cops?/i.test(question.title) ? 'cops' : 'robbers');
 			}
-		},
-		'popularity-contest': 'popularity-contest',
-		'fastest-code': 'fastest-code'
+		}*/
 	};
 	
 	var analizeHeuristicValidity = function(answer){
@@ -99,15 +98,15 @@
 						
 						var tag = question.tags.filter(function(tag){
 								return tag in tags;
-							})
-							|| 'popularity-contets'; //sorts based on votes
+							});
 						
 						if(!tag.length)
 						{
-							throw new Error('The current question doesn\'t have a suitable tag for scoring. Supported tags: ' + Object.keys(tags).join(', ') + '. Current tags: ' + question.tags.join(', '));
+							console.error('The current question doesn\'t have a suitable tag for scoring. Supported tags: ' + Object.keys(tags).join(', ') + '. Current tags: ' + question.tags.join(', '));
+							tag = ['popularity-contest'];
 						}
 						
-						$.get(ROOT + '/tags/' + tag[tag.length - 1] + '.js',function(code){
+						$.get(ROOT + '/tags/' + (tag[tag.length - 1] || 'popularity-contest') + '.js',function(code){
 							Function('HEURISTIC_INVALID_MARK', 'analizeHeuristicValidity', 'question', 'answers', '$table', '"use strict";' + code)(HEURISTIC_INVALID_MARK, analizeHeuristicValidity, question, answers, $table);
 						}, 'text').fail(function(e){
 							console.error('An error ocurred when trying to fetch the file to calculate the leaderboard', e);
