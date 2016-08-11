@@ -8,9 +8,19 @@ All the dependencies are already included in the file and everything is ready to
 
 ## How to make it work?
 
-Simply copy the file and paste it on a [Stack Snippet](https://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/), inside **any** question on the website (with the tag "codegolf").
+Simply copy the file and paste the following on a [Stack Snippet](https://blog.stackoverflow.com/2014/09/introducing-runnable-javascript-css-and-html-code-snippets/), inside **any** question on the website (with the tag "codegolf"):
 
-If you have problems, you can uncomment the [line 5 on the file](https://github.com/ismael-miguel/ppcg-leaderboard/blob/master/leaderboard.js#L5) and replace the number with your question id.
+	//QUESTION_ID = 0;
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'https://raw.githubusercontent.com/ismael-miguel/ppcg-leaderboard/master/leaderboard.js', true);
+	xhr.onreadystatechange = function () {
+		if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+			eval(xhr.responseText);
+		}
+	};
+	xhr.send();
+
+If you have problems, you can uncomment the first and manually set your question ID.
 
 Under normal circumstances, the question will be automatically detected, using the `document.referrer` property. Some browser may not work well with it, due to security concerns.
 
@@ -22,7 +32,7 @@ Everytime you execute the leaderboard, **1 request** is spent to fetch all comme
 
 ## Where can I see it in action?
 
-You can visit https://jsfiddle.net/akc5f15a/14/ to check how it works and what it can do.
+You can visit https://jsfiddle.net/akc5f15a/16/ to check how it works and what it can do.
 
 ----------
 
