@@ -1,8 +1,7 @@
 (function(window, undefined){
 	'use strict';
-	var QUESTION_ID = +(window.document.referrer + '')
-		.replace(/^https?\:\/\/codegolf\.stackexchange\.com\/questions\/(\d*)\/.*$/i, '$1')
-		|| 85;
+	var QUESTION_ID = window.QUESTION_ID
+		|| +(window.document.referrer + '').replace(/^https?\:\/\/codegolf\.stackexchange\.com\/questions\/(\d*)\/.*$/i, '$1');
 	var FILTER = '!.DAGnbqUZ3-BwQZ*J9lkg4gEetKV*IP7TRQ864RKL_bUg8tZmbZCjUKqJLCd.c98CvmlY6ycgHu';
 	var HEURISTIC_INVALID_MARK = true; //might work
 
