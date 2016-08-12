@@ -46,7 +46,7 @@
 				last_comment_date = comment.creation_date;
 			}
 			
-			if(/\b((?:in|isn't |not )valid|wrong(?: answer| (?:in|out)put| result)|spam|broken|incorrect|(?:does(?:n'?t| not) (?:seems? to )?|won'?t |will not )work)(?!\b(?:to|at|as|in))\b/i.test(comment.body))
+			if(/\b((?:in|isn't |not )(?:valid|allowed)|wrong(?: answer| (?:in|out)put| result)|spam|broken|incorrect|(?:does(?:n'?t| not) (?:seems? to )?|won'?t |will not )work)(?!\b(?:to|at|as|in))\b/i.test(comment.body))
 			{
 				score -= comment.score * +(comment.owner.user_id != question.owner.user_id);
 				return true;
