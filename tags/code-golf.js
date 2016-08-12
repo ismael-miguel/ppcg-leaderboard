@@ -181,6 +181,11 @@ var handleData = function(data){
 			};
 		}
 		
+		if(HEURISTIC_INVALID_MARK && answer.comments && answer.comments.length)
+		{
+			analizeHeuristicValidity(answer);
+		}
+		
 		return answer;
 	})
 	.forEach(function(answer){
@@ -193,11 +198,6 @@ var handleData = function(data){
 		}
 		
 		filter_data.valid[answer.answer_id] = answer;
-		
-		if(HEURISTIC_INVALID_MARK && answer.comments && answer.comments.length)
-		{
-			analizeHeuristicValidity(answer);
-		}
 		
 		if(!answer._meta.competing)
 		{
