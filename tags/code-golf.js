@@ -62,6 +62,7 @@ var renderAnswers = function(){
 					}
 					last_size = answer._meta.size;
 				}
+				console.log(answer._meta);
 				
 				return '<tr ' +
 						(answer.is_accepted ? 'style="background:#e1ffdd"': '') +
