@@ -183,7 +183,7 @@ var handleData = function(data){
 		
 		if(HEURISTIC_INVALID_MARK && answer.comments && answer.comments.length)
 		{
-			answer = analizeHeuristicValidity(answer);
+			answer = setHeuristicValidity(answer);
 		}
 		
 		answers[answers.length] = answer;
