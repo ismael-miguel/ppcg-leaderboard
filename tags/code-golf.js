@@ -63,7 +63,15 @@ var renderAnswers = function(){
 					last_size = answer._meta.size;
 				}
 				
-				return '<tr ' + (answer.is_accepted ? 'style="background:#e1ffdd"': '') + ' data-answer_id="' + answer.answer_id + '">' +
+				return '<tr ' + 
+						(answer.is_accepted ? 'style="background:#e1ffdd"': '') +
+						' data-answer_id="' + answer.answer_id + '" ' +
+						(
+							HEURISTIC_INVALID_MARK && answer._meta.HEURISTIC_INVALID && answer._meta.HEURISTIC_INVALID.length
+								? 'data-HEURISTIC_INVALID_SCORE="' + answer.answer_id + '"'
+								: ''
+						) +
+					'>' +
 					'<td data-order="' + (answer._meta.valid ? index + 1 : answers.length - (invalid_index++)) + '">' +
 						(
 							answer._meta.competing
