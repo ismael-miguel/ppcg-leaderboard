@@ -17,7 +17,7 @@ var filter_data = {
 	}
 };
 
-var renderAnswers = function(){
+var renderAnswers = function(answers){
 	
 	var last_size = 0;
 	var classification = 1;
