@@ -197,6 +197,7 @@ var handleData = function(data){
 		if(HEURISTIC_INVALID_MARK && answer.comments && answer.comments.length)
 		{
 			analizeHeuristicValidity(answer);
+			console.log(answer._meta);
 		}
 		
 		if(!answer._meta.competing)
