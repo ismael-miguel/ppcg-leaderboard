@@ -63,7 +63,7 @@ var renderAnswers = function(){
 					last_size = answer._meta.size;
 				}
 				
-				return '<tr ' + 
+				return '<tr ' +
 						(answer.is_accepted ? 'style="background:#e1ffdd"': '') +
 						' data-answer_id="' + answer.answer_id + '" ' +
 						(
@@ -154,7 +154,7 @@ var handleData = function(data){
 	var $div = $('<div>');
 	var answers = [];
 	
-	var _X = data.map(function(answer){
+	data.map(function(answer){
 		var meta = answer.body.match(/<h\d>\s*([^\n,]*[^\s,]),.*?(\d+)(?=[^\n\d<>]*(?:<(?:s>[^\n<>]*<\/s>|[^\n<>]+>)[^\n\d<>]*)*<\/h\d>)/);
 		
 		if(meta)
