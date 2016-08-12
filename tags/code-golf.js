@@ -62,7 +62,6 @@ var renderAnswers = function(answers){
 					}
 					last_size = answer._meta.size;
 				}
-				console.log(answer._meta);
 				
 				return '<tr ' +
 						(answer.is_accepted ? 'style="background:#e1ffdd"': '') +
@@ -225,6 +224,8 @@ var handleData = function(data){
 			filter_data.per_lang[answer._meta.lang_text] = answer.answer_id;
 		}
 	});
+	
+	console.log(answers);
 	
 	setTimeout((function(){
 		renderAnswers(this);
