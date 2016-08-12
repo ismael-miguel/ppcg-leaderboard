@@ -225,9 +225,9 @@ var handleData = function(data){
 		}
 	});
 	
-	console.log(answers);
-	
 	setTimeout((function(){
+	
+		console.log(this);
 		renderAnswers(this);
 	}).bind(answers), 10);
 };
