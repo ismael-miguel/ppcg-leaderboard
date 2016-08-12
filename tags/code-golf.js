@@ -186,11 +186,11 @@ var handleData = function(data){
 			analizeHeuristicValidity(answer);
 		}
 		
-		return answer;
-	})
-	.forEach(function(answer){
+		answers[answers.length] = answer;
+	});
+	answers.forEach(function(answer){
 		
-		filter_data.all[answer.answer_id] = answers[answers.length] = answer;
+		filter_data.all[answer.answer_id] = answer;
 		
 		if(!answer._meta.valid)
 		{
