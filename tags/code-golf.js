@@ -67,8 +67,8 @@ var renderAnswers = function(){
 						(answer.is_accepted ? 'style="background:#e1ffdd"': '') +
 						' data-answer_id="' + answer.answer_id + '" ' +
 						(
-							HEURISTIC_INVALID_MARK && answer._meta.HEURISTIC_INVALID && answer._meta.HEURISTIC_INVALID.length
-								? 'data-HEURISTIC_INVALID_SCORE="' + answer.answer_id + '"'
+							HEURISTIC_INVALID_MARK && ('HEURISTIC_INVALID_SCORE' in answer._meta)
+								? 'data-HEURISTIC_INVALID_SCORE="' + answer._meta.HEURISTIC_INVALID_SCORE + '"'
 								: ''
 						) +
 					'>' +
