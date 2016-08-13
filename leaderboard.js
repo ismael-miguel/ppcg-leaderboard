@@ -4,7 +4,7 @@
 		|| +(window.document.referrer + '').replace(/^https?\:\/\/codegolf\.stackexchange\.com\/questions\/(\d*)\/.*$/i, '$1');
 	var FILTER = '!.DAGnbqUZ3-BwQZ*J9lkg4gEetKV*IP7TRQ864RKL_bUg8tZmbZCjUKqJLCd.c98CvmlY6ycgHu';
 	var HEURISTIC_INVALID_MARK = 'HEURISTIC_INVALID_MARK' in window ? window.HEURISTIC_INVALID_MARK : true; //might work
-	var ROOT = 'https://cdn.rawgit.com/ismael-miguel/ppcg-leaderboard/master';
+	var ROOT = 'https://cdn.rawgit.com/ismael-miguel/ppcg-leaderboard';
 	var URL = 'https://api.stackexchange.com/2.2/questions/' + QUESTION_ID + '?order=desc&sort=votes&site=codegolf&filter=' + FILTER;
 	
 	var answers = [];
@@ -37,7 +37,7 @@
 		'code-golf': '495b70434f5377c180e01b8da7d9705cfc8dab36',
 		'metagolf': '495b70434f5377c180e01b8da7d9705cfc8dab36',
 		'king-of-the-hill': 'ecc976c614b8244cf805b5f6f200ebcc96fe8c7f',
-		'fastest-code': 'fastest-code',
+		'fastest-code': '',
 		'cops-and-robers': ''
 	};
 	
@@ -83,8 +83,9 @@
 						console.error('The current question doesn\'t have a suitable tag for scoring. Supported tags: ' + Object.keys(tags).join(', ') + '. Current tags: ' + question.tags.join(', '));
 						tag = ['popularity-contest'];
 					}
+					var used_tag = tag[tag.length - 1] || 'popularity-contest'
 					
-					$.get(ROOT + '/tags/' + (tag[tag.length - 1] || 'popularity-contest') + '.js?_=' + Date.now(),function(code){
+					$.get(ROOT + '/' + (commits[used_tag] || 'master') + '/tags/' + used_tag + '.js?_=' + Date.now(), function(code){
 						var TAG;
 						eval('TAG = ' + code + ';');
 						
