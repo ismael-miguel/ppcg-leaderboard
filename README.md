@@ -31,10 +31,6 @@ StackExchange API has an hard limit of 10000 requests per day, and a limit of da
 
 Everytime you execute the leaderboard, **1 request** is spent to fetch all comments and answers.
 
-## Where can I see it in action?
-
-You can visit https://jsfiddle.net/akc5f15a/19/ to check how it works and what it can do.
-
 ----------
 
 All and any improvements are welcome!
