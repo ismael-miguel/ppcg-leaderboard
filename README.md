@@ -12,11 +12,14 @@ Simply copy and paste the following on a [Stack Snippet](https://blog.stackoverf
 
 	<!--<script>QUESTION_ID = 0;</script>-->
 	<script src="https://cdn.rawgit.com/ismael-miguel/ppcg-leaderboard/master/leaderboard.js"></script>
-	<!--permalink to the commit, for paranoids:-->
+
+Or, with a permalink to the commit:
+
+	<!--<script>QUESTION_ID = 0;</script>-->
 	<script src="https://cdn.rawgit.com/ismael-miguel/ppcg-leaderboard/148a2b229c78b4c55082b3be658b02c8584d68d2/leaderboard.js"></script>
 	
 
-If you have problems, you can uncomment the first and manually set your question ID.
+If you have problems, you can uncomment the first line (for each choice) and manually set your question ID.
 
 Under normal circumstances, the question will be automatically detected, using the `document.referrer` property. Some browser may not work well with it, due to security concerns.
 
